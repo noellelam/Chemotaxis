@@ -1,9 +1,17 @@
+
+   PImage photo;
+
 Bacteria [] mob = new Bacteria [10];
+
 void setup()   
  {     
   size (500,500);
   frameRate(5);
   
+ 
+  photo = loadImage ("minecraftpig1.jpeg");
+  photo.resize(50,50);
+   
   //create the mob
   for (int i=0; i<mob.length; i++) {
     
@@ -13,6 +21,8 @@ void setup()
  }   
  void draw()   
  {    
+   
+   cursor (photo, 5, 5);
    background (0);
    //moves and shows the mob
    for (int i=0; i<mob.length; i++) {
@@ -51,3 +61,5 @@ void setup()
 
    
    
+   
+ 
