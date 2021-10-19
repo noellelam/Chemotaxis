@@ -1,7 +1,6 @@
+PImage photo;
 
-   PImage photo;
-
-Bacteria [] mob = new Bacteria [10];
+Bacteria [] mob = new Bacteria [1];
 
 void setup()   
  {     
@@ -23,7 +22,7 @@ void setup()
  {    
    
    cursor (photo, 5, 5);
-   background (0);
+   background (20,180,115);
    //moves and shows the mob
    for (int i=0; i<mob.length; i++) {
 
@@ -45,21 +44,22 @@ void setup()
   
  void move () {
    
-  myX = (mouseX + 50) + (int)(Math.random()*75)-5;
-  myY = (mouseY + 50) + (int)(Math.random()*75)-5;
+  myX = (mouseX + 50) + (int)(Math.random()*5)-2;
+  myY = (mouseY + 50) + (int)(Math.random()*5)-2;
     
     
   }
   
   void show () {
     
-    ellipse (myX,myY,50,50);
+    noStroke();
     
+    fill (216,163,83);
+    rect (myX,myY,50,50);
+    
+    fill (105,75,30);
+    rect(myX,myY,50,15);
+    rect (myX,myY,5,20);
+    rect (myX+45,myY,5,20);
   }
  }
- 
-
-   
-   
-   
- 
