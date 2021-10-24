@@ -1,12 +1,14 @@
 PImage photo;
+PImage bg;
 
-Bacteria [] mob = new Bacteria [10];
+Bacteria [] mob = new Bacteria [5];
 
 void setup()   
  {     
-  size (500,500);
-  frameRate(10);
+  size (550,550);
+  frameRate(25);
   
+  bg = loadImage("dirtblock.jpeg");
  
   photo = loadImage ("minecraftpig1.jpeg");
   photo.resize(50,50);
@@ -22,10 +24,11 @@ void setup()
  {    
    
    cursor (photo, 5, 5);
-   background (20,180,115);
+   background (bg);
    //moves and shows the mob
    for (int i=0; i<mob.length; i++) {
-
+     
+     
      mob[i].move();
      mob[i].show();
      
@@ -37,18 +40,30 @@ void setup()
   
   Bacteria () {
     
-    myX = 250;
-    myY = 250;
+    myX = 275;
+    myY = 275;
     
   }
   
  void move () {
    
-  myX = (mouseX + 50) + (int)(Math.random()*50)-2;
-  myY = (mouseY + 50) + (int)(Math.random()*50)-2;
+ if (mouseX>myX)
+      myX=myX+(int)(Math.random()*5)-1;
+      
+    else 
+      myX = myX+ (int)(Math.random()*3)-2;
+      
+    if (mouseY>myY)
+      myY=myY+(int)(Math.random()*5)-1;
+      
+    else 
+      myY = myY+ (int)(Math.random()*3)-2;
+ 
     
     
   }
+    
+
   
   void show () {
     
