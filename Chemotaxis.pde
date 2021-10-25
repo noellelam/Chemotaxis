@@ -1,4 +1,4 @@
-PImage photo;
+PImage myPhoto;
 PImage bg;
 
 Bacteria [] mob = new Bacteria [5];
@@ -10,8 +10,8 @@ void setup()
   
   bg = loadImage("dirtblock.jpeg");
  
-  photo = loadImage ("minecraftpig1.jpeg");
-  photo.resize(50,50);
+  myPhoto = loadImage ("minecraftpig1.jpeg");
+  myPhoto.resize(50,50);
    
   //create the mob
   for (int i=0; i<mob.length; i++) {
@@ -23,7 +23,7 @@ void setup()
  void draw()   
  {    
    
-   cursor (photo, 5, 5);
+   cursor (myPhoto, 5, 5);
    background (bg);
    //moves and shows the mob
    for (int i=0; i<mob.length; i++) {
