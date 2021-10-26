@@ -11,7 +11,7 @@ void setup()
   bg = loadImage("dirtblock.jpeg");
  
   myPhoto = loadImage ("minecraftpig1.jpeg");
-  myPhoto.resize(50,50);
+  //myPhoto.resize(50,50);
    
   //create the mob
   for (int i=0; i<mob.length; i++) {
@@ -23,8 +23,12 @@ void setup()
  void draw()   
  {    
    
-   cursor (myPhoto, 5, 5);
-   background (bg);
+  background (bg);
+  image (myPhoto, mouseX, mouseY,50,50);
+   
+   
+   //cursor (myPhoto, 5, 5);
+   
    //moves and shows the mob
    for (int i=0; i<mob.length; i++) {
      
@@ -66,6 +70,8 @@ void setup()
 
   
   void show () {
+    
+    
     
     noStroke();
     
